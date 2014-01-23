@@ -1,0 +1,38 @@
+{
+  "name": "jQuery.cloneEvent",
+  "title": "jQuery Clone Event",
+  "description": "Copy events from an element to another",
+  "version": "0.1.0",
+  "homepage": "https://github.com/instaclick/jquery.cloneEvent",
+  "author": {
+    "name": "Instaclick Inc.",
+    "url": "https://github.com/instaclick"
+  },
+  "maintainers": [
+    {
+      "name": "Helder Santana",
+      "url": "https://github.com/heldr"
+    },
+    {
+      "name": "Guilherme Blanco",
+      "url": "https://github.com/guilhermeblanco"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/instaclick/jquery.cloneEvent"
+  },
+  "bugs": "",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.8"
+  },
+  "keywords": [
+    "jquery-plugin"
+  ]
+}
