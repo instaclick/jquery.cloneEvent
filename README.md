@@ -6,8 +6,8 @@ Copy events from an element to another :)
 
 Download the [production version][min] or the [development version][max].
 
-[min]: https://raw.github.com/instaclick/jquery.cloneEvent/master/dist/jquery.jquerycloneevent.min.js
-[max]: https://raw.github.com/instaclick/jquery.cloneEvent/master/jquery.jquerycloneevent.js
+[min]: https://raw.github.com/instaclick/jquery.cloneEvent/master/dist/jquery.cloneEvent.min.js
+[max]: https://raw.github.com/instaclick/jquery.cloneEvent/master/jquery.cloneEvent.js
 
 In your web page:
 
@@ -25,7 +25,7 @@ jQuery(function($) {
         alert('Woww!');
     });
 
-    $('#bar').cloneEvent($foo);
+    $('#bar').cloneEvent($foo); //copy all events fom #foo
 });
 </script>
 ```
