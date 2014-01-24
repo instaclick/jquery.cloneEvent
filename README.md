@@ -51,7 +51,7 @@ $('#bar').cloneEvent($foo, ['click', 'hover']);
 Just few steps
 
 ```CLI
-$ npm install
+$ npm install && bower install
 ```
 
 We use [Gulp](http://gulpjs.com) tasks to generate a build version.
