@@ -36,7 +36,7 @@
             var eventList         = this.eventList,
                 selectedEventList = {};
 
-            if (this.filter !== true) {
+            if (this.filter && this.filter !== true) {
                 selectedEventList = (this.filter instanceof Array) ? this.filter : this.filter.replace(/\s+/gi, ' ').split(' ');
 
 
@@ -59,11 +59,13 @@
 
     $.fn[pluginName] = function (source, filter) {
 
-        return this.each(function () {
+        this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
                 $.data(this, "plugin_" + pluginName, new Plugin(this, source, filter));
             }
         });
+
+        return this;
     };
 
 })(jQuery);

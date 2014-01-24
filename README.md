@@ -1,4 +1,4 @@
-# jQuery Clone Event
+# jQuery Clone Event [![Build Status](https://secure.travis-ci.org/instaclick/jquery.cloneEvent.png)](http://travis-ci.org/instaclick/jquery.cloneEvent)
 
 Copy events from an element to another :)
 

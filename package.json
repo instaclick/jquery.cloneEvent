@@ -4,7 +4,7 @@
   "description": "Copy events from an element to another",
   "main": "jquery.cloneEvent.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha-phantomjs test/index.html"
   },
   "repository": {
     "type": "git",
