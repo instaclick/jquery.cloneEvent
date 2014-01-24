@@ -25,7 +25,7 @@ jQuery(function($) {
         alert('Woww!');
     });
 
-    $('#bar').cloneEvent($foo); //copy all events fom #foo
+    $('#bar').cloneEvent($foo); //copy all events from #foo
 });
 </script>
 ```
