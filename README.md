@@ -4,7 +4,11 @@ Copy events from an element to another :)
 
 ## Getting Started
 
-Download the [production version][min] or the [development version][max].
+Download the [production version][min] or the [development version][max]. You can install through bower as well:
+
+```CLI
+$ bower install jquery.cloneEvent
+```
 
 [min]: https://raw.github.com/instaclick/jquery.cloneEvent/master/dist/jquery.cloneEvent.min.js
 [max]: https://raw.github.com/instaclick/jquery.cloneEvent/master/jquery.cloneEvent.js
