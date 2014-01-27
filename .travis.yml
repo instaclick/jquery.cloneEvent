@@ -1,7 +1,11 @@
 language: node_js
 node_js:
   - "0.10"
+notifications:
+  email: false
 before_script:
-  - npm install -g bower mocha-phantomjs
-script:
-  - npm install && bower install && mocha-phantomjs test/index.html
+  - "npm install -g bower gulp testem"
+  - "bower install"
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
+  - "sleep 5"

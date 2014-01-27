@@ -15,5 +15,6 @@
     "globalstrict": true,
     "white": true,
     "indent": 4,
-    "jquery": true
+    "jquery": true,
+    "validthis": true
 }

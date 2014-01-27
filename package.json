@@ -1,10 +1,10 @@
 {
   "name": "jquery.cloneevent",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Copy events from an element to another",
   "main": "jquery.cloneEvent.js",
   "scripts": {
-    "test": "mocha-phantomjs test/index.html"
+    "test": "gulp lint && testem ci --launch Firefox"
   },
   "repository": {
     "type": "git",

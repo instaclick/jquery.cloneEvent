@@ -6,22 +6,25 @@
   </head>
   <body>
     <div id="mocha"></div>
-    <div style="display:none">
+    <div id="fixture" style="display:none">
       <button id="foo">foo</button>
       <button id="bar">bar</button>
     </div>
+    <script src="../bower_components/jquery/jquery.js"></script>
     <script src="../node_modules/mocha/mocha.js"></script>
     <script src="../node_modules/chai/chai.js"></script>
+
+    <!-- For CI tests -->
+    <script src="/testem.js"></script>
+
     <script>
-      mocha.ui('bdd');
-      mocha.reporter('html');
+      mocha.setup('bdd');
     </script>
-    <script src="../bower_components/jquery/jquery.js"></script>
     <script src="../jquery.cloneEvent.js"></script>
     <script src="jquery.cloneEvent.spec.js"></script>
     <script>
-      if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
-      else { mocha.run(); }
+      mocha.checkLeaks();
+      mocha.run();
     </script>
   </body>
 </html>

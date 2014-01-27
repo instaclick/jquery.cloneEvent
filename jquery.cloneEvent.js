@@ -1,6 +1,6 @@
 /**
  * @license Copyright 2014 Instaclick Inc.
- *  jQuery cloneEvent - v0.1.0
+ *  jQuery cloneEvent - v0.1.1
  *  https://github.com/instaclick
  *
  *  Under MIT License
@@ -11,59 +11,50 @@
 
     var pluginName = "cloneEvent";
 
-    var Plugin = function (element, source, filter) {
-            this.element   = element;
-            this.source    = (typeof source === 'string') ? $(source) : source;
-            this.eventList = $._data(this.source[0], 'events') || {};
-            this.filter    = filter || false;
+    function getEventList(source, filter) {
+        var eventList         = $.extend({}, $._data(source[0], 'events')), // make a copy of source event list to avoid delete
+            selectedEventList = {};
 
-            this.initialize();
-        };
+        if (filter && filter !== true) {
+            selectedEventList = (filter instanceof Array) ? filter : filter.replace(/\s+/gi, ' ').split(' ');
 
-    Plugin.prototype = {
-        copyEvent: function (eventList) {
+
             for (var eventKey in eventList) {
                 if (!eventList.hasOwnProperty(eventKey)) {
                     continue;
                 }
 
-                for (var i = 0, l = eventList[eventKey].length; i < l; i++) {
-                    $.event.add(this.element, eventKey, eventList[eventKey][i]);
+                if (selectedEventList.indexOf(eventKey) === -1) {
+                    eventList[eventKey] = null;
+
+                    delete eventList[eventKey];
                 }
             }
-        },
-        initialize: function () {
-            var eventList         = this.eventList,
-                selectedEventList = {};
-
-            if (this.filter && this.filter !== true) {
-                selectedEventList = (this.filter instanceof Array) ? this.filter : this.filter.replace(/\s+/gi, ' ').split(' ');
-
-
-                for (var eventKey in eventList) {
-                    if (!eventList.hasOwnProperty(eventKey)) {
-                        continue;
-                    }
-
-                    if (selectedEventList.indexOf(eventKey) === -1) {
-                        eventList[eventKey] = null;
-
-                        delete eventList[eventKey];
-                    }
-                }
-            }
-
-            this.copyEvent(eventList);
         }
-    };
+
+        return eventList;
+    }
+
+    function copyEvent(eventList) {
+        for (var eventKey in eventList) {
+            if (!eventList.hasOwnProperty(eventKey)) {
+                continue;
+            }
+
+            for (var i = 0, l = eventList[eventKey].length; i < l; i++) {
+                $.event.add(this[0], eventKey, eventList[eventKey][i]);
+            }
+        }
+    }
 
     $.fn[pluginName] = function (source, filter) {
 
-        this.each(function () {
-            if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName, new Plugin(this, source, filter));
-            }
-        });
+        if (this.length) {
+            var $source   = (typeof source === 'string') ? $(source) : source,
+                eventList = getEventList($source, filter);
+
+            this.each($.proxy(copyEvent, this, eventList));
+        }
 
         return this;
     };
