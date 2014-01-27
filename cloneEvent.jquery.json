@@ -2,7 +2,7 @@
   "name": "cloneEvent",
   "title": "jQuery Clone Event",
   "description": "Copy events from an element to another",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/instaclick/jquery.cloneEvent",
   "author": {
     "name": "Instaclick Inc.",

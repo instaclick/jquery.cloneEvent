@@ -1,6 +1,6 @@
 /**
  * @license Copyright 2014 Instaclick Inc.
- *  jQuery cloneEvent - v0.1.1
+ *  jQuery cloneEvent - v0.1.2
  *  https://github.com/instaclick
  *
  *  Under MIT License
