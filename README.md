@@ -48,14 +48,9 @@ $('#bar').cloneEvent($foo, ['click', 'hover']);
 0.1.0 - First release
 
 ## Development
-Just few steps
+Be sure to have [Node.js](http://nodejs.org), [Bower](https://github.com/bower/bower), [Gulp](http://gulpjs.com) and [Testem](https://github.com/airportyh/testem) globally installed.
 
 ```CLI
 $ npm install && bower install
-```
-
-We use [Gulp](http://gulpjs.com) tasks to generate a build version.
-
-```CLI
-$ gulp
+$ npm test
 ```

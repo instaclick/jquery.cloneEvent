@@ -9,7 +9,6 @@
 
         before(function () {
             $fooButton.on(eventList, function (event) {
-                console.log(event.target);
                 $(this).data('event', event);
             });
         });
