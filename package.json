@@ -1,5 +1,5 @@
 {
-  "name": "jquery.cloneevent",
+  "name": "jquery.cloneEvent",
   "version": "0.1.2",
   "description": "Copy events from an element to another",
   "main": "jquery.cloneEvent.js",
