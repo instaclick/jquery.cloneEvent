@@ -22,8 +22,6 @@
     "url": "https://github.com/instaclick/jquery.cloneEvent/issues"
   },
   "devDependencies": {
-    "jshint-stylish": "~0.1.5",
-    "gulp-rename": "~0.2.2",
     "mocha": "~1.17.1",
     "chai": "~1.8.1",
     "grunt": "^0.4.4",
